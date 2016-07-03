@@ -101,3 +101,8 @@ input.toggle {
 #todo-list .toggle {
     height: 44px;
 }
+#add-btn {
+    position: absolute;
+    top: 30px;
+    right: 5px
+}

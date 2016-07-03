@@ -9,18 +9,15 @@
         <section id="container">
             <header>
                 <h1>todos</h1>
-                <input type="text" id="new-todo">
+                <input id="new-todo" data-bind="textInput: current" placeholder="Add a note .. ">
+                <button id="add-btn" data-bind="click: add">Add</button>
             </header>
             <section class="main">
-                <input id="toggle-all" class="toggle" data-bind="checked: allCompleted" type="checkbox">
-                <ul id="todo-list">
+                <input id="toggle-all" class="toggle" type="checkbox">
+                <ul id="todo-list" data-bind="foreach: todoList">
                     <li>
                         <input class="toggle" type="checkbox">
-                        <span>Hola</span> 
-                    </li>
-                    <li>
-                        <input class="toggle" type="checkbox">
-                        <span>Hola</span> 
+                        <span data-bind="text: title"></span> 
                     </li>
                 </ul>
             </section>
@@ -28,7 +25,11 @@
 
             <footer>
 
+                <pre data-bind="text: ko.toJSON($root, null, 2)"></pre>
             </footer>
         </section>
+
+        <script src="js/knockout.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>
