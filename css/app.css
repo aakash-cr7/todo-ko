@@ -1,0 +1,103 @@
+body {
+    background: #eaeaea url(../images/bg.png);
+    color: #4d4d4d;
+    width: 550px;
+    margin: 0 auto;
+    color: #4d4d4d;
+}
+#container {
+    background: rgba(255, 255, 255, 0.9);
+    margin: 130px 0 40px 0;
+    border: 1px solid #ccc;
+    position: relative;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+#container:before {
+    content: '';
+    border-left: 1px solid #f5d6d6;
+    border-right: 1px solid #f5d6d6;
+    width: 2px;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    height: 100%;
+}
+#container h1 {
+    position: absolute;
+    top: -135px;
+    width: 100%;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    color: #b3b3b3;
+    color: rgba(255, 255, 255, 0.3);
+    text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+}
+header {
+    padding-top: 10px;
+}
+header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 15px;
+    z-index: 2;
+    border-bottom: 1px solid #6c615c;
+    background: #8d7d77;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(132, 110, 100, 0.8)),to(rgba(101, 84, 76, 0.8)));
+    background: -webkit-linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+    background: linear-gradient(top, rgba(132, 110, 100, 0.8), rgba(101, 84, 76, 0.8));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#9d8b83', EndColorStr='#847670');
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+}
+.main {
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.15);
+}
+#new-todo {
+    padding: 16px 16px 16px 60px;
+    box-sizing: border-box;
+    border: none;
+    background: rgba(0, 0, 0, 0.02);
+    z-index: 2;
+    width:100%;
+    box-shadow: none;
+    font-size: 20px;
+    color: #757575;
+}
+#new-todo:focus {
+    outline: none;
+    border: none;
+}
+#todo-list {
+    margin: 0;
+    padding: 0;
+}
+#todo-list li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 60px;
+    font-size: 18px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    border-bottom: 1px dotted #ccc;
+}
+
+input.toggle {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    margin: 0;
+    height: 64px;
+    width: 42px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+#todo-list .toggle {
+    height: 44px;
+}
