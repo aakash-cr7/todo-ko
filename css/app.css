@@ -60,7 +60,7 @@ header:before {
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.15);
 }
 #new-todo {
-    padding: 16px 16px 16px 60px;
+    padding: 16px 60px 16px 60px;
     box-sizing: border-box;
     border: none;
     background: rgba(0, 0, 0, 0.02);
@@ -87,7 +87,6 @@ header:before {
     padding-bottom: 11px;
     border-bottom: 1px dotted #ccc;
 }
-
 input.toggle {
     position: absolute;
     top: 0px;
@@ -105,4 +104,18 @@ input.toggle {
     position: absolute;
     top: 30px;
     right: 5px
+}
+a#delete-item {
+    position: absolute;
+    visibility: hidden;
+    right: 8px;
+}
+a#delete-item:hover {
+    cursor: pointer;
+}
+#todo-list li:hover a#delete-item {
+    visibility: visible;
+}
+span.fa.fa-times {
+    color: rgba(101, 84, 76, 0.8);
 }

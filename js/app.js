@@ -8,20 +8,30 @@
     }
 
     var ViewModel = function() {
-        this.current = ko.observable("");
+        self = this;
+        self.current = ko.observable("");
 
-        this.todoList = ko.observableArray([]);
-        // Add a new todo item 
-        this.add = function() {
-            var current = this.current().trim();
+        self.todoList = ko.observableArray([]);
+
+        // Add a new tod item 
+        self.add = function() {
+            var current = self.current().trim();
 
             if (current) {
                 // push new todo item to the todoList
-                this.todoList.push( new Todo(current) );
+                self.todoList.push( new Todo(current) );
                 // make current '' after pushing it to the list
-                this.current('');
+                self.current('');
             }
         }
+
+        self.remove = function() {
+            console.log("Hola Senior");
+            // remove the clicked item from the array
+            self.todoList.remove(this); // here this refers to the item being clicked on
+        }
+
+        
     }
 
     // Bind a new instance of the ViewModel to our page
