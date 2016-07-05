@@ -97,6 +97,25 @@ input.toggle {
     -webkit-appearance: none;
     appearance: none;
 }
+.toggle:after {
+    content: "✔";
+    line-height: 43px;
+    margin-left: 10px;
+    font-size: 20px;
+    color: rgb(217, 217, 217);
+    text-shadow: rgb(191, 191, 191) 0px -1px 0px;
+}
+input.toggle:focus {
+    outline: none;
+    border: none;
+}
+input.checked:after {
+    color: #85ada7;
+    text-shadow: 0 1px 0 #669991;
+}
+#toggle-all:after {
+    content:'';
+}
 #todo-list .toggle {
     height: 44px;
 }
@@ -118,4 +137,7 @@ a#delete-item:hover {
 }
 span.fa.fa-times {
     color: rgba(101, 84, 76, 0.8);
+}
+.todo.complete {
+    text-decoration: line-through;
 }

@@ -17,8 +17,8 @@
                 <input id="toggle-all" class="toggle" type="checkbox">
                 <ul id="todo-list" data-bind="foreach: todoList">
                     <li>
-                        <input class="toggle" type="checkbox">
-                        <span data-bind="text: title"></span> 
+                        <input class="toggle" type="checkbox" data-bind="css: { checked: completed }, click: $parent.finishedTask">
+                        <span data-bind="text: title, attr: { class: completed() ? 'todo complete' : 'todo'}"></span> 
                         <!-- Because of foreach if we write just click: remove. It will be in the context of Todo, so go up one binding context to access ViewModel -->
                         <a id="delete-item" data-bind="click: $parent.remove"><span class="fa fa-times"></span></a>
                     </li>

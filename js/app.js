@@ -1,9 +1,9 @@
 (function() {
     
     // Single ToDo item
-    var Todo = function(title, completed = false) {
+    var Todo = function(title) {
         this.title = ko.observable(title);
-        this.completed = ko.observable(completed);
+        this.completed = ko.observable(false);
         this.editMode = ko.observable(false);
     }
 
@@ -26,12 +26,13 @@
         }
 
         self.remove = function() {
-            console.log("Hola Senior");
             // remove the clicked item from the array
             self.todoList.remove(this); // here this refers to the item being clicked on
         }
 
-        
+        self.finishedTask = function() {
+            this.completed(true);
+        }
     }
 
     // Bind a new instance of the ViewModel to our page
