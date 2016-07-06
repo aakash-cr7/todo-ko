@@ -37,6 +37,9 @@ body {
 header {
     padding-top: 10px;
 }
+li.priority-task {
+    color: red !important;
+}
 header:before {
     content: '';
     position: absolute;
@@ -129,15 +132,28 @@ a#delete-item {
     visibility: hidden;
     right: 8px;
 }
-a#delete-item:hover {
+a#delete-item:hover,
+a#prioritze-item:hover {
     cursor: pointer;
 }
-#todo-list li:hover a#delete-item {
+#todo-list li:hover a#delete-item,
+#todo-list li:hover a#prioritze-item {
     visibility: visible;
 }
-span.fa.fa-times {
+span.fa.fa-times, span.fa.fa-star {
     color: rgba(101, 84, 76, 0.8);
 }
 .todo.complete {
     text-decoration: line-through;
+}
+a#prioritze-item {
+    position: absolute;
+    visibility: hidden;
+    right: 33px;
+}
+span.fa.fa-star.priority {
+    color: #ffcd40;
+}
+.red {
+    color: red !important;
 }

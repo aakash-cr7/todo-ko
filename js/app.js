@@ -5,6 +5,7 @@
         this.title = ko.observable(title);
         this.completed = ko.observable(false);
         this.editMode = ko.observable(false);
+        this.isPrioritized = ko.observable(false);
     }
 
     var ViewModel = function() {
@@ -27,11 +28,22 @@
 
         self.remove = function() {
             // remove the clicked item from the array
-            self.todoList.remove(this); // here this refers to the item being clicked on
+            self.todoList.remove(this); // here 'this' refers to the item being clicked on
         }
 
         self.finishedTask = function() {
             this.completed(true);
+        }
+
+        // Prioritize a task
+        self.prioritize = function() {
+            var currValue = this.isPrioritized();
+
+            if(currValue == false) {
+                this.isPrioritized(true);
+            } else {
+                this.isPrioritized(false);
+            }
         }
     }
 
