@@ -14,15 +14,20 @@
 
         self.todoList = ko.observableArray([]);
 
-        // Add a new tod item 
-        self.add = function() {
-            var current = self.current().trim();
+        // Add a new todo item 
+        self.add = function(data, event) {
 
-            if (current) {
-                // push new todo item to the todoList
-                self.todoList.push( new Todo(current) );
-                // make current '' after pushing it to the list
-                self.current('');
+            // add todo only when presed enter
+            if(event.keyCode == 13) {
+                // get the input value
+                var current = self.current().trim();
+
+                if (current) {
+                    // push new todo item to the todoList
+                    self.todoList.push( new Todo(current) );
+                    // make current '' after pushing it to the list
+                    self.current('');
+                }
             }
         }
 

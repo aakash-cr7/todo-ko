@@ -10,8 +10,7 @@
         <section id="container">
             <header>
                 <h1>todos</h1>
-                <input id="new-todo" data-bind="textInput: current" placeholder="Add a note .. ">
-                <button id="add-btn" data-bind="click: add">Add</button>
+                <input id="new-todo" data-bind="textInput: current, event: { keyup: add }" placeholder="Add a note .. ">
             </header>
             <section class="main">
                 <input id="toggle-all" class="toggle" type="checkbox">
